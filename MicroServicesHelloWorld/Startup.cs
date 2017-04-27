@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Nancy.Owin;
 
 namespace MicroServicesHelloWorld
 {
@@ -28,10 +29,21 @@ namespace MicroServicesHelloWorld
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Run(async (context) =>
+           loggerFactory.AddConsole();
+
+            if (env.IsDevelopment())
             {
-                await context.Response.WriteAsync("Hello World!");
-            });
+                app.UseDeveloperExceptionPage();
+            }
+
+            //Old code - generated
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("Hello World!");
+            //});
+
+            //New Nancy code
+            app.UseOwin(buildFunc => buildFunc.UseNancy());
         }
     }
 }
