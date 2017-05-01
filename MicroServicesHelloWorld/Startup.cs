@@ -37,7 +37,17 @@ namespace MicroServicesHelloWorld
             //});
 
             //New Nancy code
-            app.UseOwin(buildFunc => buildFunc.UseNancy());
+            app.UseOwin(buildFunc => {
+                buildFunc(next => evt =>{
+                    System.Console.WriteLine(String.Format("{0} Request Recieved filter 1",DateTime.Now));
+                    return next(evt);
+                });
+                 buildFunc(next => evt =>{
+                    System.Console.WriteLine(String.Format("{0} Request Recieved filter 2",DateTime.Now));
+                    return next(evt);
+                });
+                buildFunc.UseNancy();
+                });
         }
     }
 }
