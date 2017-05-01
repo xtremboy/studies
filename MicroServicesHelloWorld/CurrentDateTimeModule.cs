@@ -8,7 +8,17 @@ public class CurrentDateTimeModule: NancyModule
 {
     public CurrentDateTimeModule()
     {
-        Get("/", _ => DateTime.UtcNow);
+        Get("/", _ => {
+            
+            var response = (Response)("\""+DateTime.UtcNow.ToString()+"\"");
+
+        response.ContentType = "application/json";
+        
+
+        return response;
+
+
+            });
     }
 }
 }
