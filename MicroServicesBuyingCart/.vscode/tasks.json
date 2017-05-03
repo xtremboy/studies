@@ -8,7 +8,7 @@
     "tasks": [
         {
             "taskName": "build",
-            "args": ["${workspaceRoot}/MicroServicesHelloWorld.csproj"],
+            "args": ["${workspaceRoot}/MicroServicesBuyingCart.csproj"],
             "isBuildCommand": true,
             "showOutput": "silent",
             "problemMatcher": "$msCompile"

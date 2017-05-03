@@ -1,34 +1,14 @@
 using System;
 using Nancy;
 
-namespace MicroServicesHelloWorld{
+namespace MicroServicesBuyingCart{
 
 
-public class CurrentDateTimeModule: NancyModule
+    public class CurrentDateTimeModule: NancyModule
 {
     public CurrentDateTimeModule()
     {
-        Get("/", _ => {
-            
-            var response = (Response)("\""+DateTime.UtcNow.ToString()+"\"");
+        Get("/", _ => DateTime.UtcNow);
+    } 
+}}
 
-        response.ContentType = "application/json";
-        
-
-        return response;
-
-
-            });
-    }
-}
-}
-
-//Original service serving only json answer and doing error on html get
-// public class CurrentDateTimeModule
-// : NancyModule
-// {
-// public CurrentDateTimeModule()
-// {
-// Get("/", _ => DateTime.UtcNow);
-// }
-// }
