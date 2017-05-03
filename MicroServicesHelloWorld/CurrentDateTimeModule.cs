@@ -22,3 +22,13 @@ public class CurrentDateTimeModule: NancyModule
     }
 }
 }
+
+//Original service serving only json answer and doing error on html get
+// public class CurrentDateTimeModule
+// : NancyModule
+// {
+// public CurrentDateTimeModule()
+// {
+// Get("/", _ => DateTime.UtcNow);
+// }
+// }
