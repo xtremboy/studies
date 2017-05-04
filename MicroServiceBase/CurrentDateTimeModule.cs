@@ -1,7 +1,7 @@
 using System;
 using Nancy;
 
-namespace MicroServicesBuyingCart{
+namespace MicroServicesBase{
 
 
     public class CurrentDateTimeModule: NancyModule

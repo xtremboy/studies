@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Nancy.Owin;
 
-namespace MicroServicesBuyingCart
+namespace MicroServicesBase
 {
     public class Startup
     {
